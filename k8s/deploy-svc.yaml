@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: zero-aks-demo
-          image: javacontainercicdacrzer0big.azurecr.io/aks-spring-demo:latest
+          image: zeroacrdemo.azurecr.io/aks-spring-demo:latest
           ports:
             - containerPort: 8080
 ---
