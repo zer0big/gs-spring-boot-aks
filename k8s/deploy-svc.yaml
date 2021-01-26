@@ -25,7 +25,7 @@ metadata:
 spec:
   ports:
     - name: http-port
-      port: 80
+      port: 8080
       targetPort: 80
   selector:
     app: zero-aks-app
