@@ -1,0 +1,42 @@
+# Maven
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
+trigger:
+- main
+
+pool:
+  name: zerodemo
+  demands: maven
+
+steps:
+- task: Maven@3
+  displayName: 'Maven pom.xml'
+
+- task: Docker@2
+  displayName: 'Build services'
+  inputs:
+    containerRegistry: 'zeracrdemo'
+    repository: 'aks-spring-demo'
+    command: 'buildAndPush'
+    Dockerfile: 'Dockerfile'
+
+- task: Docker@2
+  displayName: 'Push services'
+  inputs:
+    containerRegistry: 'zeracrdemo'
+    repository: 'aks-spring-demo'
+    command: 'buildAndPush'
+    Dockerfile: 'Dockerfile'
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'sed -i "s/latest/$(Build.BuildId)/g" k8s/deploy-svc.yaml'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'k8s/deploy-svc.yaml'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
