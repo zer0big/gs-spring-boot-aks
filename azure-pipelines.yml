@@ -6,10 +6,6 @@
 trigger:
 - main
 
-pool:
-  name: zerodemo
-  demands: maven
-
 steps:
 - task: Maven@3
   displayName: 'Maven pom.xml'
