@@ -11,7 +11,7 @@ public class Application {
 
 	@RequestMapping("/")
 	public String home() {
-		return "Hell Modernized SB App";
+		return "Hell5 Modernized SB App";
 	}
 
 	public static void main(String[] args) {
