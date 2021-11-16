@@ -11,7 +11,7 @@ public class Application {
 
 	@RequestMapping("/")
 	public String home() { 
-		return "Spring Boot Java App Modernization Demo";
+		return "Hello~~~ Spring Boot Java App Modernization Demo";
 	}
 
 	public static void main(String[] args) {
