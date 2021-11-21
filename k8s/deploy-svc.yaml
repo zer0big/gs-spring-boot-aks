@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: zeroaksdemo
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       app: zero-aks-app
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: zero-aks-demo
-          image: zeroacrdemo.azurecr.io/aks-spring-demo:latest
+          image: zeroacrdemobg.azurecr.io/aks-spring-demo:latest
           ports:
             - containerPort: 8080
 ---

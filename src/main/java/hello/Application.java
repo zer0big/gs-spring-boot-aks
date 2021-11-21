@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Application {
 
 	@RequestMapping("/")
+
 	public String home() {
 		return "Hi~~Busan, This demo is for Modernized SB App on AKS";
 	}
