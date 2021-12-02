@@ -13,7 +13,7 @@ public class Application {
 
 	public String home() {
 
-		return "Hello Busan, This demo is for Modernized SB App on AKS";
+		return "Hello, This demo is for Modernized SB App on AKS";
 
 	}
 
