@@ -13,8 +13,8 @@ steps:
 - task: Docker@2
   displayName: 'Build services'
   inputs:
-    containerRegistry: 'svcconn4acr'
-    repository: 'web'
+    containerRegistry: 'SvcConnAcr'
+    repository: 'appmod-demo4btc'
     command: 'buildAndPush'
     Dockerfile: 'Dockerfile'
     tags: |
@@ -24,8 +24,8 @@ steps:
 - task: Docker@2
   displayName: 'Push services'
   inputs:
-    containerRegistry: 'svcconn4acr'
-    repository: 'web'
+    containerRegistry: 'SvcConnAcr'
+    repository: 'appmod-demo4btc'
     command: 'buildAndPush'
     Dockerfile: 'Dockerfile'
     tags: |
