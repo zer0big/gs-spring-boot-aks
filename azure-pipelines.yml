@@ -4,7 +4,19 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- main
+  #batch: true
+  branches:
+    include:
+    - main
+    exclude:
+    - dev
+  paths:
+    include:
+    - src/main/*
+    #- k8s/deploy-svc.yaml
+    exclude:
+    - README.md
+    - k8s/deploy-svc.yaml
 
 steps:
 - task: Maven@3
