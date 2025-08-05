@@ -25,8 +25,8 @@ steps:
 - task: Docker@2
   displayName: 'Docker Build'
   inputs:
-    containerRegistry: 'SvcConnAcr'
-    repository: 'appmod-demo4btc'
+    containerRegistry: 'SVCConn4ACR'
+    repository: 'my-first-app'
     command: 'buildAndPush'
     Dockerfile: 'Dockerfile'
     tags: |
@@ -36,8 +36,8 @@ steps:
 - task: Docker@2
   displayName: 'Docker Push'
   inputs:
-    containerRegistry: 'SvcConnAcr'
-    repository: 'appmod-demo4btc'
+    containerRegistry: 'SVCConn4ACR'
+    repository: 'my-first-app'
     command: 'buildAndPush'
     Dockerfile: 'Dockerfile'
     tags: |
